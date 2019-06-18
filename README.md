@@ -6,9 +6,21 @@
 Студент выбирает специальность в университете.
  Формируются рейтинговые списки поступивших, студентам приходит уведомление о поступлении.
  
- Инструкция по установке и запуску приложения:
- - Скачать и установить сервер Tomcat https://tomcat.apache.org/download-80.cgi
-     - Инструкция по установке Tomcat http://xpoint.ru/know-how/Articles/UstanavlivaemTomcatPodWindows
+### Инструкция по установке и запуску приложения:
+ - Скачать и установить сервер Tomcat 
+     ```
+     https://tomcat.apache.org/download-80.cgi
+     ```
+ - Инструкция по установке Tomcat 
+     ```
+     http://xpoint.ru/know-how/Articles/UstanavlivaemTomcatPodWindows
+     ```
  - Запустить сервер.
- - Через консоль в скачаной директории IntroductoryCampaign вызвать команду mvn tomcat7:run
- - В браузере перейти по адресу localhost:8080
+ - Через консоль в скачаной директории IntroductoryCampaign вызвать команду 
+    ```
+    mvn tomcat7:run
+    ```
+ - В браузере перейти по адресу 
+     ```
+     localhost:8080
+     ```
