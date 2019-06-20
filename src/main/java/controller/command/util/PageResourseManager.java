@@ -2,7 +2,7 @@ package controller.command.util;
 
 import java.util.ResourceBundle;
 
-public class PageResourceManager {
+public class PageResourseManager {
 
     private static ResourceBundle resourceBundle = ResourceBundle.getBundle("pages");
 

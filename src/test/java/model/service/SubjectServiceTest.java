@@ -30,7 +30,7 @@ public class SubjectServiceTest {
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        subject = new Subject(0,"name");
+        subject = new Subject(0, "name");
         when(daoFactory.createSubjectDao()).thenReturn(subjectDao);
         when(subjectDao.findById(0)).thenReturn(subject);
         when(subjectDao.findAll()).thenReturn(Collections.singletonList(subject));
@@ -38,17 +38,19 @@ public class SubjectServiceTest {
     }
 
     @Test
-    public void getById()  {
+    public void getById() {
         Subject subjectServiceById = subjectService.findById(0);
         assertEquals(subject, subjectServiceById);
     }
+
     @Test
-    public void getAll()  {
+    public void getAll() {
         List<Subject> subjectList = subjectService.findAll();
         assertEquals(subject, subjectList.get(0));
     }
+
     @Test
-    public void create()  {
+    public void create() {
         Subject specialty = new Subject();
         specialty.setId(2);
         subjectService.create(specialty);

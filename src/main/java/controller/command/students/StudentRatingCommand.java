@@ -15,15 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class StudentRatingCommand implements Command {
     private Logger logger = Logger.getLogger(StudentRatingCommand.class);
-    private SpecialtyService specialtyService = new SpecialtyServiceImpl();
-    private StudentService studentService = new StudentServiceImpl();
+    SpecialtyService specialtyService = new SpecialtyServiceImpl();
+    StudentService studentService = new StudentServiceImpl();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-
         Student student = (Student) request.getSession().getAttribute(AttributesResourceManager.getProperty("parameter.user"));
         studentService.setMarks(student);
-        request.setAttribute("speciallyList", specialtyService.findAll());
+        request.setAttribute("speciatlyList", specialtyService.findAll());
         try {
             Integer specialtyId = Integer.parseInt(request.getParameter(AttributesResourceManager.getProperty("parameter.specialty")));
             request.setAttribute("studentsReceivedList", studentService.receivedStudents(specialtyId));

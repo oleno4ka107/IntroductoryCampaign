@@ -5,7 +5,6 @@
 <fmt:setLocale value="${language}"/>
 <fmt:setBundle basename="text"/>
 
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="${language}">
 <head>
@@ -27,17 +26,10 @@
     <div class="row">
         <div class="col s12 m6">
             <h1 class="flow-text mb15"><fmt:message key="text.student.page"/></h1>
-            <form method="post"
-                  action="${pageContext.request.contextPath}/university/studentPage/department">
-                <input type="hidden">
-                <button class="btn" type="submit"><fmt:message key="text.departament"/></button>
-            </form>
-
-            <form method="post"
-                  action="${pageContext.request.contextPath}/university/studentPage/studentRating">
-                <input type="hidden">
-                <button class="btn" type="submit"><fmt:message key="text.student.rating"/></button>
-            </form>
+<%--            <c:if test="${empty not specialty_id}">--%>
+                    <a class="btn" href="${pageContext.request.contextPath}/university/studentpage/departament"><fmt:message key="text.departament"/></a>
+<%--            </c:if>--%>
+            <a class="btn" href="${pageContext.request.contextPath}/university/studentpage/studentrating"><fmt:message key="text.student.rating"/></a>
         </div>
         <div class="col s12 m6">
             <div class="card blue-grey darken-1">

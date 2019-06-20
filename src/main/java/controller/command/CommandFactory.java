@@ -3,8 +3,9 @@ package controller.command;
 import controller.command.admins.AdminCommand;
 import controller.command.admins.SendNotificationCommandButton;
 import controller.command.admins.SetGradeCommand;
+import controller.command.admins.StudentListCommand;
 import controller.command.pagesCommand.*;
-import controller.command.students.DepartmentCommand;
+import controller.command.students.DepartamentCommand;
 import controller.command.students.StudentPageCommand;
 import controller.command.students.StudentRatingCommand;
 import org.apache.log4j.Logger;
@@ -21,17 +22,18 @@ public class CommandFactory {
     static {
         commandMap.put("admin", new AdminCommand());
         commandMap.put("login", new LoginCommand());
-        commandMap.put("studentPage/department", new DepartmentCommandPage());
-        commandMap.put("studentPage/department/set", new DepartmentCommand());
+        commandMap.put("studentpage/departament", new DepartamentCommandPage());
+        commandMap.put("studentpage/departament/set", new DepartamentCommand());
         commandMap.put("registration", new RegistrationCommandPage());
         commandMap.put("registration/create", new RegistrationCommand());
-        commandMap.put("admin/sendNotification", new SendNotificationCommandPage());
-        commandMap.put("admin/sendNotification/send", new SendNotificationCommandButton());
-        commandMap.put("admin/setGrade", new SetGradeCommandPage());
-        commandMap.put("admin/setGrade/button", new SetGradeCommand());
-        commandMap.put("studentPage", new StudentPageCommand());
-        commandMap.put("studentPage/studentRating", new StudentRatingCommandPage());
-        commandMap.put("studentPage/studentRating/show", new StudentRatingCommand());
+        commandMap.put("admin/sendnotification", new SendNotificatioinCommandPage());
+        commandMap.put("admin/sendnotification/send", new SendNotificationCommandButton());
+        commandMap.put("admin/setgrade", new SetGradeCommandPage());
+        commandMap.put("admin/setgrade/button", new SetGradeCommand());
+        commandMap.put("admin/studentlist", new StudentListCommand());
+        commandMap.put("studentpage", new StudentPageCommand());
+        commandMap.put("studentpage/studentrating", new StudentRatingCommandPage());
+        commandMap.put("studentpage/studentrating/show", new StudentRatingCommand());
         commandMap.put("main", new MainCommand());
         commandMap.put("logout", new LogoutCommand());
 

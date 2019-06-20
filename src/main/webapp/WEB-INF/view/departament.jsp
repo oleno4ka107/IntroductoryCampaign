@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="language" value="${not empty sessionScope.language ? sessionScope.language : pageContext.request.locale}"
@@ -16,7 +17,7 @@
 
     <div class="input-field col s12">
 
-        <form method="post" action="${pageContext.request.contextPath}/university/studentPage/department/set">
+        <form method="post" action="${pageContext.request.contextPath}/university/studentpage/departament/set">
             <div class="input-field col s12">
                 <select class="browser-default" name="specialty">
                     <option disabled><fmt:message key="text.set.specialty"/></option>

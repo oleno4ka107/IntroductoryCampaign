@@ -7,7 +7,7 @@ public class CommandUtil {
         String page = "";
         switch (accessLevel) {
             case 2:
-                page = "redirect:/studentPage";
+                page = "redirect:/studentpage";
                 break;
             case 3:
                 page = "redirect:/admin";

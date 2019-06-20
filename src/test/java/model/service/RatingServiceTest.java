@@ -90,7 +90,7 @@ public class RatingServiceTest {
 
     @Test
     public void setmark() {
-        ratingService.setmark("email", 1, 10);
+        ratingService.setmark(1, 1, 10);
 
         verify(studentDao, times(1)).findByEmail("email");
 

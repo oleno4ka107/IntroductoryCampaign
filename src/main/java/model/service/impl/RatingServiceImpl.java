@@ -59,10 +59,10 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public void setmark(String email, Integer subjectId, Integer assessment) {
+    public void setmark(Integer studentId, Integer subjectId, Integer assessment) {
         try (RatingDao ratingDao = daoFactory.createRatingDao();
              StudentDao studentDao = daoFactory.createStudentDao()) {
-            Student student = studentDao.findByEmail(email);
+            Student student = studentDao.findById(studentId);
             Rating rating = new Rating(assessment, subjectId, student.getId());
             ratingDao.create(rating);
             logger.info("set marks");

@@ -16,7 +16,7 @@
     <h1 class="flow-text"><fmt:message key="text.send.notification"/></h1>
 
     <form method="post"
-          action="${pageContext.request.contextPath}/university/admin/sendNotification/send">
+          action="${pageContext.request.contextPath}/university/admin/sendnotification/send">
 
         <input type="text" required placeholder="<fmt:message key="text.email"/>" name="email"/>
 

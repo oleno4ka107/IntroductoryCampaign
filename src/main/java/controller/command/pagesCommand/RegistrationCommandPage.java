@@ -2,7 +2,7 @@ package controller.command.pagesCommand;
 
 import controller.command.Command;
 import org.apache.log4j.Logger;
-import controller.command.util.PageResourceManager;
+import controller.command.util.PageResourseManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +13,6 @@ public class RegistrationCommandPage implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         logger.info("execute");
-        return PageResourceManager.getProperty("registration");
+        return PageResourseManager.getProperty("registration");
     }
 }

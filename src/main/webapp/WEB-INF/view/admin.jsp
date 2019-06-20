@@ -18,13 +18,13 @@
     <div class="center-pill">
 
         <form role="form" method="post"
-              action="${pageContext.request.contextPath}/university/admin/setGrade">
+              action="${pageContext.request.contextPath}/university/admin/studentlist">
             <button class="btn" type="submit"><fmt:message key="text.set.marks"/></button>
         </form>
 
 
         <form role="form" method="post"
-              action="${pageContext.request.contextPath}/university/admin/sendNotification">
+              action="${pageContext.request.contextPath}/university/admin/sendnotification">
             <button class="btn" type="submit"><fmt:message key="text.notification"/></button>
         </form>
     </div>

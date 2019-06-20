@@ -27,7 +27,7 @@ public class ContextUtil {
 
     @SuppressWarnings("unchecked")
     private static void getLoggedUsers(HttpSession session) {
-        loggedUsers = (HashMap<Student, HttpSession>)session.getServletContext().getAttribute(
-               AttributesResourceManager.getProperty("attribute.servlet.context.logged.users"));
+        loggedUsers = (HashMap<Student, HttpSession>) session.getServletContext().getAttribute(
+                AttributesResourceManager.getProperty("attribute.servlet.context.logged.users"));
     }
 }

@@ -1,10 +1,9 @@
 package controller.validation;
 
-
 public class InputValid {
 
 
-    public static boolean isUkraininanValid(String text) {
+    public static boolean isUkrainianValid(String text) {
         final String regex = "^[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє']{1,20}$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(regex);
         java.util.regex.Matcher m = p.matcher(text);

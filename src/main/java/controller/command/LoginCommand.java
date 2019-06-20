@@ -8,7 +8,7 @@ import model.service.impl.StudentServiceImpl;
 import org.apache.log4j.Logger;
 import controller.command.util.AttributesResourceManager;
 import controller.command.util.ContextUtil;
-import controller.command.util.PageResourceManager;
+import controller.command.util.PageResourseManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,6 +43,6 @@ public class LoginCommand implements Command {
             }
         }
 
-        return PageResourceManager.getProperty("login");
+        return PageResourseManager.getProperty("login");
     }
 }

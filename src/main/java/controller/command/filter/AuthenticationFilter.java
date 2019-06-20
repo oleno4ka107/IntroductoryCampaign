@@ -1,7 +1,6 @@
 package controller.command.filter;
-
 import org.apache.log4j.Logger;
-import controller.command.util.PageResourceManager;
+import controller.command.util.PageResourseManager;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class AuthenticationFilter implements Filter {
+public class AuthenticationFilter implements Filter  {
     private Logger logger = Logger.getLogger(AuthenticationFilter.class);
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -33,18 +31,19 @@ public class AuthenticationFilter implements Filter {
             filterChain.doFilter(request, response);
         } else if (request.getRequestURI().equals("/university/registration")) {
             logger.info("Registration Forward");
-            request.getRequestDispatcher(PageResourceManager.getProperty("registration")).forward(request, response);
+            request.getRequestDispatcher(PageResourseManager.getProperty("registration")).forward(request,response);
 
-        } else if (request.getRequestURI().equals("/university/login")) {
+        }
+        else if (request.getRequestURI().equals("/university/login")) {
             logger.info("Login Forward");
 
-            request.getRequestDispatcher(PageResourceManager.getProperty("login")).forward(request, response);
-        } else {
-            response.sendRedirect("/university/login");
+            request.getRequestDispatcher(PageResourseManager.getProperty("login")).forward(request, response);
+        }
+        else {
+response.sendRedirect("/university/login");
         }
 
     }
-
     @Override
     public void destroy() {
 

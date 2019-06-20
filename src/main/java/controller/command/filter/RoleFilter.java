@@ -36,7 +36,7 @@ public class RoleFilter implements Filter {
                 CommandUtil.getUserPageByRole(student.getRole());
                 return;
             }
-        } else if (path.contains("studentPage")) {
+        } else if (path.contains("studentpage")) {
             if (Objects.nonNull(student.getEmail()) && student.getRole().equals(Role.ABITURIENT.getRole())) {
                 filterChain.doFilter(servletRequest, servletResponse);
             } else {

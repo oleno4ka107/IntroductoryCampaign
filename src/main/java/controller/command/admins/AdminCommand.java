@@ -2,7 +2,7 @@ package controller.command.admins;
 
 import controller.command.Command;
 import org.apache.log4j.Logger;
-import controller.command.util.PageResourceManager;
+import controller.command.util.PageResourseManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +13,7 @@ public class AdminCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         logger.info("execute");
-        return PageResourceManager.getProperty("admin");
+        return PageResourseManager.getProperty("admin");
 
     }
 }

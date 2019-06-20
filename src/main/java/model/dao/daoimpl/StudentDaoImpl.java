@@ -28,6 +28,7 @@ public class StudentDaoImpl implements StudentDao {
     public void create(Student student) {
 
         try (PreparedStatement statement = connection.prepareStatement(QueriesResourceManager.getProperty("insert.user"))) {
+
             statement.setString(1, student.getNameUa());
             statement.setString(2, student.getSurnameUa());
             statement.setString(3, student.getNameEn());

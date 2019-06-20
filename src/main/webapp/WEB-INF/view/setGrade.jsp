@@ -13,25 +13,33 @@
 <jsp:include page="/WEB-INF/parts/header.jsp"/>
 <div class="container">
 
-    <form  method="post"   action="${pageContext.request.contextPath}/university/admin/setGrade/button">
+    <form method="post" action="${pageContext.request.contextPath}/university/admin/setgrade/button">
 
 
-                <input  type="text" name="email" required placeholder="<fmt:message key="text.setmarks.email"/>">
-        <div class="input-field col s12" >
-                <select class="browser-default" name="subject">
-                    <option disabled><fmt:message key="text.setmarks.subject"/></option>
-                    <c:forEach items="${databaseList}" var="subject">
-                        <option value="${subject.getId()}">
-                                ${subject.getName()}
-                        </option>
-                    </c:forEach>
+        <div class="input-field col s12">
+            <select class="browser-default" name="student_id">
+                <option disabled><fmt:message key="text.setmarks.name"/></option>
+                <c:forEach items="${databaseListStudent}" var="student">
+                    <option value="${student.getId()}">
+                            ${student.getNameUa()}
+                    </option>
+                </c:forEach>
 
-                </select>
+            </select>
+            <select class="browser-default" name="subject">
+                <option disabled><fmt:message key="text.setmarks.subject"/></option>
+                <c:forEach items="${databaseListSubject}" var="subject">
+                    <option value="${subject.getId()}">
+                            ${subject.getName()}
+                    </option>
+                </c:forEach>
+
+            </select>
         </div>
-            <label>
-                <input class="w3-input" type="number" required placeholder="<fmt:message key="text.setmarks.assessment"/>"
-                       name="grade"/>
-            </label>
+        <label>
+            <input class="w3-input" type="number" required placeholder="<fmt:message key="text.setmarks.assessment"/>"
+                   name="grade"/>
+        </label>
         </p>
         <input class="btn" type="submit" value="<fmt:message key="text.set.marks"/>">
         <c:if test="${requestScope.userExist}">

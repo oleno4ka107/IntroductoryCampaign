@@ -4,7 +4,7 @@ import controller.command.util.CommandUtil;
 import model.entity.Student;
 import org.apache.log4j.Logger;
 import controller.command.util.AttributesResourceManager;
-import controller.command.util.PageResourceManager;
+import controller.command.util.PageResourseManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +23,7 @@ public class MainCommand implements Command {
             return CommandUtil.getUserPageByRole(student.getRole());
         }
         logger.info("execute");
-        return PageResourceManager.getProperty("login");
+        return PageResourseManager.getProperty("login");
 
     }
 }

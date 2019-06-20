@@ -21,7 +21,7 @@
     <h1 class="flow-text"><fmt:message key="text.student.rating"/></h1>
 
     <div>
-        <form method="post" action="${pageContext.request.contextPath}/university/studentPage/studentRating/show">
+        <form method="post" action="${pageContext.request.contextPath}/university/studentpage/studentrating/show">
             <div class="input-field col s12">
                 <select class="browser-default" name="specialty">
                     <option selected disabled hidden style='display: none' value=''></option>

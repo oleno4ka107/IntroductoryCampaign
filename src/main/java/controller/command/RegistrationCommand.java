@@ -2,6 +2,7 @@ package controller.command;
 
 import controller.command.pagesCommand.RegistrationCommandPage;
 import controller.command.util.CommandUtil;
+import controller.command.util.PageResourseManager;
 import controller.validation.ValidationUtil;
 import model.entity.Student;
 import model.entity.types.Role;
@@ -32,7 +33,7 @@ public class RegistrationCommand implements Command {
             String nameEn = request.getParameter(AttributesResourceManager.getProperty("parameter.name.en"));
             String surnameEn = request.getParameter(AttributesResourceManager.getProperty("parameter.surname.en"));
             Integer role = Role.ABITURIENT.getRole();
-            if (!validationUtil.verifiable(email, nameUa, surnameUa, nameEn, surnameEn)) {
+            if (!validationUtil.verification(email, nameUa, surnameUa, nameEn, surnameEn)) {
                 throw new WrongDataException();
             }
             if (validationUtil.userExist(email)) {
@@ -41,6 +42,7 @@ public class RegistrationCommand implements Command {
             Student student = new Student(nameUa, surnameUa, nameEn, surnameEn, email, password, role);
             studentService.create(student);
             CommandUtil.getUserPageByRole(student.getRole());
+            return PageResourseManager.getProperty("login");
         } catch (WrongDataException e) {
             logger.error(e);
             request.setAttribute("registrationError", true);

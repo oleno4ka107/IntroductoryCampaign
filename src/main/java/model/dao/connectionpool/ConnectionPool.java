@@ -22,7 +22,7 @@ public class ConnectionPool {
                         logger.error(e);
                     }
                     BasicDataSource ds = new BasicDataSource();
-                    ds.setUrl("jdbc:mysql://localhost:3306/final_project");
+                    ds.setUrl("jdbc:mysql://localhost:3306/final_project1?characterEncoding=utf8");
                     ds.setUsername("root");
                     ds.setPassword("root");
                     ds.setMinIdle(5);

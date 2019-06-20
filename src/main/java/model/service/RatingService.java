@@ -15,6 +15,6 @@ public interface RatingService {
 
     void delete(int id);
 
-    void setmark(String email, Integer subjectId, Integer assessment);
+    void setmark(Integer studentId, Integer subjectId, Integer assessment);
 }
 

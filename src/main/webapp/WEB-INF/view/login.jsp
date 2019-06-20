@@ -18,8 +18,8 @@
     <h1 class="flow-text"><fmt:message key="text.enter.login.and.password"/></h1>
 
     <form action="${pageContext.request.contextPath}/university/login" method="post">
-        <fmt:message key="text.login"/> <input type="text" name="login" required="required"/>
-        <fmt:message key="text.password"/> <input type="text" name="password" required="required"/>
+        <fmt:message key="text.login"/> <input type="email" name="login" required="required"/>
+        <fmt:message key="text.password"/> <input type="password" name="password" required="required"/>
 
         <input type="submit" class="btn" value=
         <fmt:message key="text.enter"/>>
