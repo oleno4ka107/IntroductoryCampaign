@@ -18,8 +18,15 @@
     <form method="post"
           action="${pageContext.request.contextPath}/university/admin/sendnotification/send">
 
-        <input type="text" required placeholder="<fmt:message key="text.email"/>" name="email"/>
+        <select class="browser-default" name="email">
+            <option disabled><fmt:message key="text.email"/></option>
+            <c:forEach items="${studentsList}" var="student">
+                <option value="${student.getEmail()}">
+                        ${student.getNameUa()}
+                </option>
+            </c:forEach>
 
+        </select>
 
         <button class="btn" type="submit"><fmt:message key="text.send"/></button>
     </form>

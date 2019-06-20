@@ -1,6 +1,7 @@
 package controller.command.pagesCommand;
 
 import controller.command.Command;
+import controller.command.util.AttributesResourceManager;
 import model.service.SubjectService;
 import model.service.StudentService;
 import model.service.impl.SubjectServiceImpl;
@@ -15,11 +16,11 @@ public class SetGradeCommandPage implements Command {
     private Logger logger = Logger.getLogger(RegistrationCommandPage.class);
 
     SubjectService subjectService = new SubjectServiceImpl();
-    StudentService studentService = new StudentServiceImpl();
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-logger.info("execute");
-        request.setAttribute("databaseListStudent", studentService.findAll());
+        logger.info("execute");
+        request.setAttribute("studentId", request.getParameter(AttributesResourceManager.getProperty("parameter.student.id")));
         request.setAttribute("databaseListSubject", subjectService.findAll());
         return PageResourseManager.getProperty("admin/setgrade");
     }

@@ -13,19 +13,10 @@
 <jsp:include page="/WEB-INF/parts/header.jsp"/>
 <div class="container">
 
-    <form method="post" action="${pageContext.request.contextPath}/university/admin/setgrade/button">
+    <form method="post" action="${pageContext.request.contextPath}/university/admin/setgrade/button?studentId=${studentId}">
 
 
         <div class="input-field col s12">
-            <select class="browser-default" name="student_id">
-                <option disabled><fmt:message key="text.setmarks.name"/></option>
-                <c:forEach items="${databaseListStudent}" var="student">
-                    <option value="${student.getId()}">
-                            ${student.getNameUa()}
-                    </option>
-                </c:forEach>
-
-            </select>
             <select class="browser-default" name="subject">
                 <option disabled><fmt:message key="text.setmarks.subject"/></option>
                 <c:forEach items="${databaseListSubject}" var="subject">
@@ -33,7 +24,6 @@
                             ${subject.getName()}
                     </option>
                 </c:forEach>
-
             </select>
         </div>
         <label>

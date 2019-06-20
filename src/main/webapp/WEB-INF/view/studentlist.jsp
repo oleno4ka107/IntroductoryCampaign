@@ -50,12 +50,12 @@
                 <td>
 
                     <a class="btn"
-                       href="${pageContext.request.contextPath}/university/admin/сhangestudent?id=${student.getId()}"><i
+                       href="${pageContext.request.contextPath}/university/admin/modifystudent?studentId=${student.getId()}"><i
                             class="material-icons">create</i></a>
                 </td>
                 <td>
                     <a class="btn"
-                       href="${pageContext.request.contextPath}/university/admin/deletestudent?id=${student.getId()}"><i
+                       href="${pageContext.request.contextPath}/university/admin/deletestudent?studentId=${student.getId()}"><i
                             class="material-icons ">delete</i></a>
                 </td>
             </tr>
